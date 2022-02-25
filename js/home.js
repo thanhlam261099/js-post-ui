@@ -17,32 +17,32 @@ function createPostElement(post) {
 
   // update title, description, author, thumbnail
 
-  setTextContent(liElement, '[data-id=title', post.title)
-  setTextContent(liElement, '[data-id=description', truncateText(post.description, 100))
-  setTextContent(liElement, '[data-id=author', post.author)
+  setTextContent(liElement, '[data-id="title"]', post.title)
+  setTextContent(liElement, '[data-id="description"]', truncateText(post.description, 100))
+  setTextContent(liElement, '[data-id="author"]', post.author)
 
-  // const titleElement = liElement.querySelector('[data-id=title')
+  // const titleElement = liElement.querySelector('[data-id="title"]')
   // if(titleElement) titleElement.textContent = post.title
 
-  // const descriptionElement = liElement.querySelector('[data-id=description')
+  // const descriptionElement = liElement.querySelector('[data-id="description"]')
   // if(descriptionElement) descriptionElement.textContent = post.description
 
-  // const authorElement = liElement.querySelector('[data-id=author')
+  // const authorElement = liElement.querySelector('[data-id="author"]')
   // if(authorElement) authorElement.textContent = post.author
 
-  setTextContent(liElement, '[data-id=timeSpan', `- ${dayjs(post.updateAt).fromNow()}`)
+  setTextContent(liElement, '[data-id="timeSpan"]', `- ${dayjs(post.updateAt).fromNow()}`)
 
-  const thumbnailElement = liElement.querySelector('[data-id=thumbnail')
+  const thumbnailElement = liElement.querySelector('[data-id="thumbnail"]')
   if (thumbnailElement) {
     thumbnailElement.src = post.imageUrl
 
     thumbnailElement.addEventListener('error', () => {
-        thumbnailElement.src = 'https://via.placeholder.com/1368x400?text=:D'
+      thumbnailElement.src = 'https://via.placeholder.com/1368x400?text=:D'
     })
   }
 
   // attach element
-    
+
   return liElement
 }
 

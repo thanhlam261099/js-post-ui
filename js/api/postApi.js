@@ -35,7 +35,7 @@ const postApi = {
     })
   },
 
-  remove() {
+  remove(id) {
     const url = `/posts/${id}`
     return axiosClient.delete(url)
   },
